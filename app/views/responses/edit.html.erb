@@ -33,7 +33,7 @@
           Vignette
         </label>
 
-        <input type="text" id="vignette_id" name="vignette_id" placeholder="Vignette" class="form-control" value="<%= @response.vignette_id %>">
+        <%= select_tag(:vignette_id, options_from_collection_for_select(Vignette.all, :id, :content, @response.vignette_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for user_id -->
