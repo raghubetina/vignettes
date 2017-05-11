@@ -1,6 +1,7 @@
 class VignettesController < ApplicationController
   def index
-    @vignettes = Vignette.page(params[:page]).per(10)
+    @q = Vignette.ransack(params[:q])
+    @vignettes = @q.result(:distinct => true).includes(:responses, :users, :raters).page(params[:page]).per(10)
 
     render("vignettes/index.html.erb")
   end
