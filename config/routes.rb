@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Rating resource:
+  # CREATE
+  get "/ratings/new", :controller => "ratings", :action => "new"
+  post "/create_rating", :controller => "ratings", :action => "create"
+
+  # READ
+  get "/ratings", :controller => "ratings", :action => "index"
+  get "/ratings/:id", :controller => "ratings", :action => "show"
+
+  # UPDATE
+  get "/ratings/:id/edit", :controller => "ratings", :action => "edit"
+  post "/update_rating/:id", :controller => "ratings", :action => "update"
+
+  # DELETE
+  get "/delete_rating/:id", :controller => "ratings", :action => "destroy"
+  #------------------------------
+
   # Routes for the Response resource:
   # CREATE
   get "/responses/new", :controller => "responses", :action => "new"
