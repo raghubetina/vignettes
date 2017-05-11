@@ -10,6 +10,10 @@ class Response < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :raters,
+             :through => :ratings,
+             :source => :user
+
   # Validations
 
 end

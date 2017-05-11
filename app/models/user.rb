@@ -9,6 +9,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :rated_responses,
+             :through => :ratings,
+             :source => :response
+
   has_many   :vignettes,
              :through => :responses,
              :source => :vignette
