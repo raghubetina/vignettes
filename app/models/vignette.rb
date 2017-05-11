@@ -6,6 +6,10 @@ class Vignette < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :raters,
+             :through => :responses,
+             :source => :raters
+
   has_many   :users,
              :through => :responses,
              :source => :user
