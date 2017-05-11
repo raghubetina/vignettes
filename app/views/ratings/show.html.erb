@@ -23,12 +23,14 @@
       <a href="/ratings" class="btn btn-primary">
         Back
       </a>
-      <a href="/ratings/<%= @rating.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_rating/<%= @rating.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
+      <% if current_user == @rating.user %>
+        <a href="/ratings/<%= @rating.id %>/edit" class="btn btn-warning">
+          Edit
+        </a>
+        <a href="/delete_rating/<%= @rating.id %>" class="btn btn-danger" rel="nofollow">
+          Delete
+        </a>
+      <% end %>
     </div>
   </div>
 </div>

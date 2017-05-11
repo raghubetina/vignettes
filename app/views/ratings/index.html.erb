@@ -24,8 +24,11 @@
         <td><%= rating.response.content %></td>
         <td>
           <a href="/ratings/<%= rating.id %>" class="btn btn-primary">Show</a>
-          <a href="/ratings/<%= rating.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_rating/<%= rating.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_user == rating.user %>
+            <a href="/ratings/<%= rating.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_rating/<%= rating.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>

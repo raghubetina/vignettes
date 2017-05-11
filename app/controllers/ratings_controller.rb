@@ -1,4 +1,14 @@
 class RatingsController < ApplicationController
+  before_action :current_user_must_be_rating_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_rating_user
+    rating = Rating.find(params[:id])
+
+    unless current_user == rating.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @ratings = Rating.all
 
