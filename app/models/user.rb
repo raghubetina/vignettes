@@ -9,6 +9,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :vignettes,
+             :through => :responses,
+             :source => :vignette
+
   # Validations
 
   # Include default devise modules. Others available are:
