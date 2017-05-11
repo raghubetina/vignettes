@@ -16,6 +16,7 @@ class ResponsesController < ApplicationController
   end
 
   def show
+    @rating = Rating.new
     @response = Response.find(params[:id])
 
     render("responses/show.html.erb")

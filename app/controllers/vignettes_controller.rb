@@ -6,6 +6,7 @@ class VignettesController < ApplicationController
   end
 
   def show
+    @response = Response.new
     @vignette = Vignette.find(params[:id])
 
     render("vignettes/show.html.erb")
