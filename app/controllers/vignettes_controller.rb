@@ -1,6 +1,6 @@
 class VignettesController < ApplicationController
   def index
-    @vignettes = Vignette.all
+    @vignettes = Vignette.page(params[:page]).per(10)
 
     render("vignettes/index.html.erb")
   end
