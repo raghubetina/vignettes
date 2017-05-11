@@ -1,5 +1,7 @@
 ActiveAdmin.register Rating do
 
+ permit_params :stars, :content, :user_id, :response_id
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
