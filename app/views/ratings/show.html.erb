@@ -12,10 +12,22 @@
       <dd><%= @rating.content %></dd>
 
       <dt>User</dt>
-      <dd><%= @rating.user_id %></dd>
+      <dd>
+        <% if @rating.user.present? %>
+          <a href="/users/<%= @rating.user_id %>">
+            <%= @rating.user.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Response</dt>
-      <dd><%= @rating.response_id %></dd>
+      <dd>
+        <% if @rating.response.present? %>
+          <a href="/responses/<%= @rating.response_id %>">
+            <%= @rating.response.content %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

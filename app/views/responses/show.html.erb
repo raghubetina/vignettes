@@ -9,10 +9,22 @@
       <dd><%= @response.content %></dd>
 
       <dt>Vignette</dt>
-      <dd><%= @response.vignette_id %></dd>
+      <dd>
+        <% if @response.vignette.present? %>
+          <a href="/vignettes/<%= @response.vignette_id %>">
+            <%= @response.vignette.content %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>User</dt>
-      <dd><%= @response.user_id %></dd>
+      <dd>
+        <% if @response.user.present? %>
+          <a href="/users/<%= @response.user_id %>">
+            <%= @response.user.email %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
